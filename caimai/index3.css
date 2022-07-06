@@ -1,0 +1,148 @@
+
+/*调整页面布局*/
+ 
+/*统一设置页面样式*/
+body{
+	/*字体样式   大小和名称*/
+	font-family:FZYaoTi; 
+    font-size: 20px; 
+    line-height: 1.428571429; 
+    color: #404040; 
+	background:url(../img/background1.jpg);
+}
+
+	/*清除默认样式*/
+body p,ol,ul{
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+
+
+/*宽度设置及居中效果*/
+#container{
+	margin: 0 auto;
+	width:100%;
+}
+.top{
+			    /* 设置宽度高度背景颜色 */
+	height: 70px; 
+	width:100%;
+	margin-left: 0;
+	background:#941d0f;
+	position: fixed; /*固定在顶部*/
+	top: 0;/*离顶部的距离为0*/
+}
+.top ul{
+			
+	width: 100%;/*宽度也改为自动*/
+	list-style-type: none;
+	white-space:nowrap;
+	overflow: hidden;/*溢出部分隐藏*/
+	margin-left: 5%;
+	margin-top: 15px; 
+	padding: 0;
+
+}
+.top li {
+	float:left; /* 使li内容横向浮动，即横向排列  */
+	margin-right:2%;  /* 两个li之间的距离*/
+	position: relative;
+	overflow: hidden;
+}
+
+.top li a{
+			   /* 设置链接内容显示的格式*/
+	display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+	color:white;
+    text-align: center;
+	padding: 3px;
+	overflow: hidden;
+	text-decoration: none; /* 去除下划线 */
+			    
+}
+.top li a:hover{			     
+	background-color: #bf9351;
+}
+.top ul li ul{
+			    /* 设置二级菜单 */
+	margin-left: -0.2px;
+	background:rgb(189, 181, 181);
+	position: relative;
+	display: none; /* 默认隐藏二级菜单的内容 */
+
+}
+.top ul li ul li{
+			    /* 二级菜单li内容的显示 */
+			    
+	float:none;
+	text-align: center;
+}
+.top ul li:hover ul{
+			    /* 鼠标选中二级菜单内容时 */
+    display: block;
+}
+
+/*2.横幅*/
+#banner{
+	width:70%;
+	margin: 0 auto;
+}
+#banner img{
+	/*调整图片尺寸*/
+	width: 100%;
+	height: 220px;
+}
+
+
+#main{
+	margin:0 auto;
+	margin-top: 30px;
+}
+#main .goodsClass{
+	border-top: 3px dashed #404040;
+	padding-top: 20px;
+	margin-bottom: 20px;
+}
+#main .item>ul>li{
+	float: left;
+	height:400px;
+	margin-right: 50px;
+	margin-left: 70px;
+}
+#main img{
+	/*调整图片尺寸*/
+	width: 100%;
+	height: 450px;
+}
+
+
+#main .item>ul>li>p{
+	/*做溢出处理  使图片放大时不占其他元素*/
+	height: 400px;
+	overflow: hidden;
+}
+#main .item>ul>li>p>img{
+	width: 200px;
+	/*添加过渡属性*/
+	transition: all 0.3s;
+}
+#main .item>ul>li>img{
+	width: 50px;
+	/*添加过渡属性*/
+	transition: all 0.3s;
+}
+#main .item>ul>li>p>img:hover{
+	/*设置鼠标移到对应图片上有放大效果*/
+	transform: scale(1.1);
+}
+
+	/*调整购物框下方布局*/
+#main .content{
+	margin-top: 10px;
+}
+
+
+
+
+
