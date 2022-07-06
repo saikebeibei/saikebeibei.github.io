@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>博古阁-古墓</title>
+        <meta charset="utf-8">
+        
+        <style>
+            body{
+                background:url(../img/background1.jpg);
+            }
+            .top{
+                font-family: FZYaoTi;
+                font-size: 20px; 
+            }
+            .top{
+                /* 设置宽度高度背景颜色 */
+                height: 70px; 
+                width:100%;
+                margin-left: 0;
+                background:#941d0f;
+                position: fixed; /*固定在顶部*/
+                top: 0;/*离顶部的距离为0*/
+            }
+            .top ul{
+            
+                width: 100%;/*宽度也改为自动*/
+                list-style-type: none;
+                white-space:nowrap;
+                overflow: hidden;/*溢出部分隐藏*/
+                margin-left: 5%;
+                margin-top: 15px; 
+                padding: 0;
+
+            }
+            .top li {
+                float:left; /* 使li内容横向浮动，即横向排列  */
+                margin-right:2%;  /* 两个li之间的距离*/
+                position: relative;
+                overflow: hidden;
+            }
+
+            .top li a{
+                           /* 设置链接内容显示的格式*/
+                display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+                color:white;
+                text-align: center;
+                padding: 3px;
+                overflow: hidden;
+                text-decoration: none; /* 去除下划线 */
+                            
+            }
+            .top li a:hover{
+                         
+                background-color: #bf9351;
+            }
+            .top ul li ul{
+                            /* 设置二级菜单 */
+                margin-left: -0.2px;
+                background:rgb(189, 181, 181);
+                position: relative;
+                display: none; /* 默认隐藏二级菜单的内容 */
+
+            }
+            .top ul li ul li{
+                            /* 二级菜单li内容的显示 */
+                            
+                float:none;
+                text-align: center;
+            }
+            .top ul li:hover ul{
+                            /* 鼠标选中二级菜单内容时 */
+                display: block;
+            }
+            a:link{
+                text-decoration: none;
+                color:#941d0f;
+
+            }
+            
+            a:visited{
+                color: #941d0f;
+            }
+            a:hover{
+                color: white;
+            }
+
+          
+            #main{
+                width: 1266px;
+                margin: 120px auto;   /*居中显示*/
+            }
+            #left{
+                width: 820px;
+                height: 600px;
+                float: left;
+            }
+            #right{
+                width: 300px;
+                float: right;
+               
+            }
+            #right li{           
+                position: relative; /*相对定位. 为了后面的小图标的定位*/
+            }
+            #right li p:first-child{
+                font-family: kaiti;
+                overflow: hidden;
+                font-size: 24px;
+                height: 30px;
+                cursor: pointer;
+            
+
+            }
+            #right li p:not(:first-child){  
+                font-size: 16px;
+                cursor: pointer;
+                
+            }
+            .select{
+                background-color: #bf9351;
+               
+            }
+            .sanjiaoleft{    /*小图标的样式*/
+                display: block;
+                position: absolute;
+                top: 30px;
+                left: -29px;
+            }
+
+            ul img{   /*默认情况下图片先隐藏*/
+                display: none;
+            }           
+
+        </style>
+        <script type="text/javascript">
+        window.onload = function () {
+        var ul = document.getElementById("right");
+        var lis = ul.getElementsByTagName("li");
+        //>>1.找到所有的li注册鼠标移入和移出事件
+        for (var i = 0; i < lis.length; ++i) {
+            var li = lis[i];
+            //>>2.鼠标移入事件
+            li.onmouseover = function () {
+                //>>2.1 先清除所有效果
+                for (var j = 0; j < lis.length; ++j) {
+                    lis[j].className = '';
+                    lis[j].getElementsByTagName("img")[0].className = '';
+                }
+
+                //>>2.2 为引入的添加效果
+                this.className = 'select';
+                this.getElementsByTagName("img")[0].className = 'sanjiaoleft';
+                document.getElementById("targetImage").src = this.getAttribute("src");
+            }
+            //>>3.鼠标移出事件
+            li.onmouseout = function () {
+                //移出时删除效果
+                this.className = '';
+                this.getElementsByTagName("img")[0].className = '';
+            }
+        }
+        }
+        </script>
+        
+    <body>
+        <div id="container">
+        <div class="top">
+           <center> 
+                    <ul>
+                        <li><a href="../second/second.html">首页</a></li>
+                        <li><a href="../xiangwen/royalman.html">&nbsp&nbsp详文处&nbsp&nbsp</a>
+                            <ul>
+                                <li><a href="../xiangwen/royalman.html">皇室服饰</a></li>
+                                <li><a href="../xiangwen/officerwen.html">官员服饰</a></li>
+                                <li><a href="../xiangwen/civilianchild.html">平民服饰</a></li>
+                            </ul>
+                        <li>
+                        <li><a href="../bogu/boguge.html"><b>&nbsp&nbsp博古阁&nbsp&nbsp</b></a>
+                            <ul>
+                                <li><a href="../bogu/museum.html">博物馆</a></li>
+                                <li><a href="../bogu/painting.html">古画</a></li>
+                                <li><a href="../bogu/tomb.html">古墓</a></li>
+                            </ul>
+                        <li>
+                        <li>
+                            <a href="../caimai/buying.html">&nbsp&nbsp采买司&nbsp&nbsp</a>
+                            <ul>
+                                <li><a href="../caimai/buying.html">女性服饰</a></li>
+                                <li><a href="../caimai/buying2.html">男性服饰</a></li>
+                            </ul>
+                        </li>        
+                    </ul>
+            </center>
+        </div>  
+        <font size="2" >
+            <br/>
+            <br/>
+            <br/>
+        <div id="main">
+        <div id="left">
+            <img src="tomb1.png" id="targetImage" style="width: 820px;height: 600px">
+        </div>
+        <ul id="right">
+            <li  src="tomb1.png">
+                <a  href="tomb1.html" target="_blank">
+                    <p>三门峡唐代墓葬</p>
+                    <p>三门峡，其东凭熊耳崤陵之险，西据桃林函谷要塞，北依滔滔黄河，南靠巍巍秦山，自古便是东通中原,西达关中。近日出土30余件瓷佣，让我们对唐代服饰有了更深的认识。</p>
+                </a>
+                <img class="sanjiaoleft"  src="signal.png" width="20px">
+            </li>
+            <li   src="tomb2.jpg">
+                <a href="tomb2.html" target="_blank">
+                    <p>唐昭陵</p>
+                    <p>昭陵是唐太宗李世民与文德皇后长孙氏的合葬陵墓，被誉为“天下名陵”。</p>
+                </a>
+                <img src="signal.png" width="20px">
+            </li>
+            <li  src="tomb3.jpg">
+                <a href="tomb3.html" target="_blank">
+                    <p>张镇唐代墓群</p>
+                    <p>十六国大型墓葬1座、唐代围沟墓5座、唐代双室砖墓1座。</p>
+                </a>
+                <img src="signal.png" width="20px">
+            </li>
+            <li  src="tomb4.jpg">
+                <a href="tomb4.html" target="_blank">
+                    <p>唐乾陵</p>
+                    <p>乾陵是陕西关中地区唐十八陵之一，位于陕西省咸阳市乾县县城北部6千米的梁山上，为唐高宗李治与武则天的合葬墓。</p>
+                </a>
+                <img  src="signal.png" width="20px">
+            </li>
+        </ul>
+    
+    </font>
+    </div>      
+            
+    
+    </div>
+    </body>
+</html>

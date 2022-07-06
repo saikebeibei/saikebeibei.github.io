@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html >
+	<head>
+		<title>博古阁-博物馆</title>
+		<meta charset="utf-8">
+		
+		<style>
+			body{
+				background:url(../img/background1.jpg);
+			}
+			.top{
+				font-family: FZYaoTi;
+    			font-size: 20px; 
+			}
+			.top{
+			    /* 设置宽度高度背景颜色 */
+				height: 70px; 
+				width:100%;
+				margin-left: 0;
+				background:#941d0f;
+				position: fixed; /*固定在顶部*/
+				top: 0;/*离顶部的距离为0*/
+			}
+			.top ul{
+			
+				width: 100%;/*宽度也改为自动*/
+				list-style-type: none;
+				white-space:nowrap;
+				overflow: hidden;/*溢出部分隐藏*/
+				margin-left: 5%;
+				margin-top: 15px; 
+				padding: 0;
+
+			}
+			.top li {
+				float:left; /* 使li内容横向浮动，即横向排列  */
+				margin-right:2%;  /* 两个li之间的距离*/
+				position: relative;
+				overflow: hidden;
+			}
+
+			.top li a{
+						   /* 设置链接内容显示的格式*/
+				display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+				color:white;
+			    text-align: center;
+				padding: 3px;
+				overflow: hidden;
+				text-decoration: none; /* 去除下划线 */
+						    
+			}
+			.top li a:hover{
+					     
+				background-color: #bf9351;
+			}
+			.top ul li ul{
+						    /* 设置二级菜单 */
+				margin-left: -0.2px;
+				background:rgb(189, 181, 181);
+				position: relative;
+				display: none; /* 默认隐藏二级菜单的内容 */
+
+			}
+			.top ul li ul li{
+						    /* 二级菜单li内容的显示 */
+						    
+				float:none;
+				text-align: center;
+			}
+			.top ul li:hover ul{
+						    /* 鼠标选中二级菜单内容时 */
+			    display: block;
+			}
+			a:link{
+				text-decoration: none;
+				color:#941d0f;
+
+			}
+		    
+		    a:visited{
+		    	color: #941d0f;
+		    }
+		    a:hover{
+		    	color: white;
+		    }
+
+		  
+		    #main{
+		        width: 1266px;
+		        margin: 120px auto;   /*居中显示*/
+		    }
+		    #left{
+		        width: 820px;
+		        height: 600px;
+		        float: left;
+		    }
+		    #right{
+		        width: 300px;
+		        float: right;
+		       
+		    }
+		    #right li{		     
+		        position: relative; /*相对定位. 为了后面的小图标的定位*/
+		    }
+		    #right li p:first-child{
+		    	font-family: kaiti;
+		        overflow: hidden;
+		        font-size: 24px;
+		        height: 30px;
+		        cursor: pointer;
+		    
+
+		    }
+		    #right li p:not(:first-child){  
+		        font-size: 16px;
+		        cursor: pointer;
+		        
+		    }
+		    .select{
+		        background-color: #bf9351;
+		       
+		    }
+		    .sanjiaoleft{    /*小图标的样式*/
+		        display: block;
+		        position: absolute;
+		        top: 30px;
+		        left: -29px;
+		    }
+
+		    ul img{   /*默认情况下图片先隐藏*/
+		        display: none;
+		    }			
+
+		</style>
+		<script type="text/javascript">
+    	window.onload = function () {
+        var ul = document.getElementById("right");
+        var lis = ul.getElementsByTagName("li");
+        //>>1.找到所有的li注册鼠标移入和移出事件
+        for (var i = 0; i < lis.length; ++i) {
+            var li = lis[i];
+            //>>2.鼠标移入事件
+            li.onmouseover = function () {
+                //>>2.1 先清除所有效果
+                for (var j = 0; j < lis.length; ++j) {
+                    lis[j].className = '';
+                    lis[j].getElementsByTagName("img")[0].className = '';
+                }
+
+                //>>2.2 为引入的添加效果
+                this.className = 'select';
+                this.getElementsByTagName("img")[0].className = 'sanjiaoleft';
+                document.getElementById("targetImage").src = this.getAttribute("src");
+            }
+            //>>3.鼠标移出事件
+            li.onmouseout = function () {
+                //移出时删除效果
+                this.className = '';
+                this.getElementsByTagName("img")[0].className = '';
+            }
+        }
+        }
+		</script>
+		
+	<body>
+		<div id="container">
+		<div class="top">
+           <center> 
+                    <ul>
+                    	<li><a href="../second/second.html">首页</a></li>
+                    	<li><a href="../xiangwen/royalman.html">&nbsp&nbsp详文处&nbsp&nbsp</a>
+                    		<ul>
+                            	<li><a href="../xiangwen/royalman.html">皇室服饰</a></li>
+                            	<li><a href="../xiangwen/officerwen.html">官员服饰</a></li>
+                            	<li><a href="../xiangwen/civilianchild.html">平民服饰</a></li>
+                        	</ul>
+                    	<li>
+                    	<li><a href="../bogu/boguge.html"><b>&nbsp&nbsp博古阁&nbsp&nbsp</b></a>
+                    		<ul>
+                            	<li><a href="../bogu/museum.html">博物馆</a></li>
+                            	<li><a href="../bogu/painting.html">古画</a></li>
+                            	<li><a href="../bogu/tomb.html">古墓</a></li>
+                        	</ul>
+                    	<li>
+                    	<li>
+                        	<a href="../caimai/buying.html">&nbsp&nbsp采买司&nbsp&nbsp</a>
+                        	<ul>
+                            	<li><a href="../caimai/buying.html">女性服饰</a></li>
+                            	<li><a href="../caimai/buying2.html">男性服饰</a></li>
+                        	</ul>
+                    	</li>        
+                	</ul>
+            </center>
+		</div>	
+		<font size="2" >
+			<br/>
+			<br/>
+			<br/>
+		<div id="main">
+	    <div id="left">
+	        <img src="images/museum/中国服饰博物馆.jpg" id="targetImage" style="width: 820px;height: 600px">
+	    </div>
+	    <ul id="right">
+	        <li  src="images/museum/中国服饰博物馆.jpg">
+	            <a  href="https://www.baidu.com/link?url=q5qrZwOaKmCSx_2XvrHnMkviOIYJcG778Hi1CkuJMpF4f4iYo8FYqJiNIrNOT48IOK01XIP5HhvtkMycip9XJoi1oephrRFA_AEVrUCU1F9nM1EMDORXW4RssvlIAIiZaGdGhusVCHMkSYcLtvGqbs9yBEYufuZxDTaQ5lQr-t_&wd=&eqid=ea836e2f0008027b000000025f902744" target="_blank">
+	                <p>中国服饰博物馆</p>
+	                <p>中国服饰博物馆是目前国内唯一一个综合反映中国纺织服饰历史文化和科技知识的专业博物馆。</p>
+	            </a>
+	            <img class="sanjiaoleft"  src="images/museum/指示标.png" width="20px">
+	        </li>
+	        <li   src="images/museum/中国丝绸博物馆.jpg">
+	            <a href="https://www.baidu.com/link?url=eYNJe1Fqw6IQPP5S1GhpivmPQBJOc3BNNz2-TIye6Bx6E03ho5FKElSNqa1ZncFf1NsPWnnCjxuapXTLVPYtidpEm0PWOoxGsjrANonRqNFjZcgxSoHIhWM7tR5rceEmFJGkUBONRkyfa5RW_RcqYQVb-4fL_JONZowgritkg1SaTwhNdzQBV2YKXr4S__AmMGhEbeZDiSbRxvVrMrH5H2VrqHwyYBJ2uv1x_j76ZrTo3Bkw4WoMArPmQKUwA0J2QwvZO6AQ2YxNblHCdU5fi_&wd=&eqid=9d5fa41700057ca9000000025f9026fe" target="_blank">
+	                <p>中国丝绸博物馆</p>
+	                <p>坐落在西湖畔，以丝绸纺织为主，服饰古今中外都有，古代服饰入门必看之展。</p>
+	            </a>
+	            <img src="images/museum/指示标.png" width="20px">
+	        </li>
+	        <li  src="images/museum/江宁织造博物馆.jpg">
+	            <a href="https://www.baidu.com/link?url=Z3ilVMESoPJDMy704O_lYsUzmUuHGmuh5SNiS8YW2qjj9Q4nfHdz7J042VKg_7bMfX0jjWsgPrkRd8GvfHGsvi0J042JTcDzoGsLq4NHM9FpNj99MJot4OY3ySPXZAOHezop45uoubUQDGH3ZO5i63PKGtVo0Ww70bvOHfZC-73&wd=&eqid=a68f56a8000aa4bf000000025f9026d8" target="_blank">
+	                <p>江宁织造博物馆</p>
+	                <p>以江宁织造为主题，博物馆的设计十分精妙，藏品丰富，布展也非常现代化。</p>
+	            </a>
+	            <img src="images/museum/指示标.png" width="20px">
+	        </li>
+	        <li  src="images/museum/故宫博物馆.jpg">
+	            <a href="https://www.baidu.com/link?url=KPAav2Ko3NX9vRWofo_BwrdZrQYDoIU-wSRkOK4i-aG&wd=&eqid=9749443800061ae3000000025f902687" target="_blank">
+	                <p>故宫博物院</p>
+	                <p>故宫博物院是在明朝、清朝两代皇宫及其收藏的基础上建立起来的中国综合性博物馆,也是中国最大的古代文化艺术博物馆。</p>
+	            </a>
+	            <img  src="images/museum/指示标.png" width="20px">
+	        </li>
+	    </ul>
+	
+	</font>
+	</div>		
+			
+	
+	</div>
+	</body>
+</html>

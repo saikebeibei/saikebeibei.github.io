@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>博古阁</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="index2.css">
+
+</head>
+<body>
+	<div id="container">
+		<div class="top">
+           <center> 
+                    <ul>
+                    	<li><a href="../second/second.html">首页</a></li>
+                    	<li><a href="../xiangwen/royalman.html">&nbsp&nbsp详文处&nbsp&nbsp</a>
+                    		<ul>
+                            	<li><a href="../xiangwen/royalman.html">皇室服饰</a></li>
+                            	<li><a href="../xiangwen/officerwen.html">官员服饰</a></li>
+                            	<li><a href="../xiangwen/civilianchild.html">平民服饰</a></li>
+                        	</ul>
+                    	<li>
+                    	<li><a href="../bogu/boguge.html"><b>&nbsp&nbsp博古阁&nbsp&nbsp</b></a>
+                    		<ul>
+                            	<li><a href="../bogu/museum.html">博物馆</a></li>
+                            	<li><a href="../bogu/painting.html">古画</a></li>
+                            	<li><a href="../bogu/tomb.html">古墓</a></li>
+                        	</ul>
+                    	<li>
+                    	<li>
+                        	<a href="../caimai/buying.html">&nbsp&nbsp采买司&nbsp&nbsp</a>
+                        	<ul>
+                            	<li><a href="../caimai/buying.html">女性服饰</a></li>
+                            	<li><a href="../caimai/buying2.html">男性服饰</a></li>
+                        	</ul>
+                    	</li>        
+                	</ul>
+            </center></div>
+		
+		<div id="main">
+			<div class="museum">
+                <a href="museum.html"><img src="../img/museumlogo1.png" width=300px></a>
+                <center>
+                <div id="bg">
+                    <div id="sm">   <!--滚动div-->
+                            <table>     <!--外表格1x2,且第2单元格是空的-->
+                                <tr>
+                                    <td id="Pic1">
+                                        <table> <!--内表格1x9,存放9张图片-->
+                                            <tr>
+                                                <td><a href="museum.html"><img src="images/1.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></a></td>
+                                                <td><a href="museum.html"><img src="images/2.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></a></td>
+                                                <td><a href="museum.html"><img src="images/3.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></a></td>
+                                                <td><a href="museum.html"><img src="images/4.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></a></td>
+                                            </tr>
+                                       </table>
+                                   </td>
+                                   <td id="Pic2"></td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+                </center>
+ 
+<!--下面内容的客户端脚本不可放置在页面头部-->
+                 
+                <script>
+                    Pic2.innerHTML=Pic1.innerHTML;//复制一组图片，但被隐藏
+                    function scrolltoleft(){//定义向左移动的方法
+                        sm.scrollLeft++;//改变层的水平坐标，实现向左移动
+                        if(sm.scrollLeft>=Pic1.scrollWidth)//需要复位
+                            sm.scrollLeft=0;//层的位置复位，浏览器窗口的宽度有限的
+                    }
+                    
+                    var MyMar=setInterval(scrolltoleft,20); //定时器，方法名后不可加()
+              
+                    //两面两行是用方法响应对象的事件
+                    sm.onmouseover=function(){//匿名方法（函数）
+                        clearInterval(MyMar);//停止滚动
+                    }                   
+                    sm.onmouseout=function(){
+                        MyMar = setInterval(scrolltoleft,40);//继续滚动
+                    }                 
+                </script>                                 
+            </div>
+			<div class="painting">
+                <a href="painting.html"><img src="../img/paintinglogo1.png" width=300px></a>
+                <div id="imgofp">
+                    <div id="p1">
+                        <a href="painting.html"><img src="images/5.jpg" height="150px"></a>
+
+                    </div>
+                    <div id="p2">
+                        <a href="painting.html"><img src="images/6.jpg" height="150px"></a>
+
+                    </div>
+                    <div id="p3">
+                        <a href="painting.html"><img src="images/7.jpg" height="150px"></a>
+
+                    </div>
+                     <div id="p4">
+                        <a href="painting.html"><img src="images/8.jpg" height="150px" width="470px"></a>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+			<div class="tomb">
+                <a href="tomb.html"><img src="../img/tomblogo1.png" width=300px></a>
+                <div id="imgoft">
+                    <div id="p5">
+                        <a href="tomb.html"><img src="images/9.jpeg" height="170px"></a>
+
+                    </div>
+                    <div id="p6">
+                        <a href="tomb.html"><img src="images/10.jpeg" height="170px"></a>
+
+                    </div>
+                    <div id="p7">
+                        <a href="tomb.html"><img src="images/11.jpg" height="170px" width="400px"></a>
+
+                    </div>
+                     <div id="p8">
+                        <a href="tomb.html"><img src="images/12.jpg" height="170px" ></a>
+
+                    </div>                    
+                </div>                     
+            </div>
+		</div>
+	</div>
+
+</body>
+</html>
