@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>霓裳-唐服饰网</title>
+    <style type="text/css">
+        body{
+            background: url(../img/background2.jpg);
+        }
+        #top{
+            width:1700px;
+            height:100px;
+            background-color: #65232d;  
+            margin:0 auto;
+        }
+        #content{
+            width:1366px;
+            margin:0 auto;      
+        }
+        *{
+            margin: 10;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            height: 650px;
+            width: 1366px;
+            margin: 0 auto;
+        }
+        ul li{
+            box-sizing: border-box;
+            height: 600px;
+            width: 450px;
+            float: left;
+            margin-right: 50px;
+            margin: 0 auto;
+        }
+        ul li:last-child{
+            margin-right: 0px;
+        }
+       @-webkit-keyframes fadeInOut { 
+   0% { 
+       opacity:1; 
+    } 
+   25% { 
+       opacity:0; 
+   } 
+   50% { 
+       opacity: 0;     
+   } 
+   75% { 
+       opacity:1; 
+   } 
+} 
+.anim_fade_image { 
+   position:absolute;     
+   -webkit-animation-name: fadeInOut; 
+   -webkit-animation-timing-function: ease-in-out; 
+   -webkit-animation-iteration-count: infinite; 
+   -webkit-animation-duration: 12s; 
+   -webkit-animation-direction: alternate; 
+}
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        
+        <img src="logo.png" width=90px height=90px>
+        <a href="second.html"><img src="nishang.png" height=90px></a>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <a href="../xiangwen/royalman.html"><img src="xiangwen.png" height=90px></a>&emsp;
+        <a href="../bogu/boguge.html"><img src="bogu.png" height=90px></a>&emsp;
+        <a href="../caimai/buying.html"><img src="caimai.png" height=90px></a>
+
+    </div>
+    <div id="content">
+        <br><br><br><br><br>
+      <ul>
+        <li>
+            <a href="../xiangwen/royalman.html">
+            	<img class="anim_fade_image"src="emperor.png" alt="" width="350" height="600">
+            	<img src="emperor1.png"alt="" width="350" height="600">
+              <img src="../img/royalcloth1.png" width="350">
+            </a>                      
+        </li>
+        <li>
+            <a href="../xiangwen/officerwen.html">
+            	<img id="addLineImg" class="anim_fade_image" src="officer.png" alt="" width="350" height="600">
+            	<img src="officer1.png"alt="" width="350" height="600">
+              <img src="../img/officercloth1.png" width="350"></a>          
+        </li>
+        <li>
+            <a href="../xiangwen/civilianchild.html"><img id="addLineImg" class="anim_fade_image" src="civilian.png" alt="" width="350" height="600">
+            	<img src="civilian1.png"alt="" width="350" height="600">
+              <img src="../img/civiliancloth1.png" width="350"></a>
+    
+        </li>
+      </ul>
+    </div>
+</body>
+</html>
